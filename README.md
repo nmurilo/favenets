@@ -1,2 +1,2 @@
 # favenets
-A little program to catch devices searching for "favorite/preferred" wifi networks 
+A small program to catch devices searching for "favorite/preferred" wifi networks 
