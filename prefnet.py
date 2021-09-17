@@ -6,7 +6,7 @@ __license__   = "AMS"
 __version__   = "0.2"
 __date__      = "2012-05-20"
 
-# Update OUI database (Linux): 
+# Update the OUI database (Linux): 
 # /usr/share/pyshared/netaddr/eui# python ieee.py 
 
 import logging
@@ -27,7 +27,7 @@ def PacketHandler(pkt) :
                mac = "??" 
             print "%s(%s) [%s] "  %(pkt.addr2, mac, pkt.info)
 try:
-   # YOU MUST put here your wifi interface in monitor mode 
+   # YOU MUST to put here your wifi interface in monitor mode 
    sniff(iface="mon0", prn = PacketHandler, lfilter=lambda p:Dot11ProbeReq in p)
 except:
    print "prefnet: Interface in monitor mode not found\n" 
