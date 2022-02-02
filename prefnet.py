@@ -7,7 +7,8 @@ __version__   = "0.2"
 __date__      = "2012-05-20"
 
 # Update the OUI database (Linux): 
-# /usr/share/pyshared/netaddr/eui# python ieee.py 
+# cd /usr/share/pyshared/netaddr/eui
+# python ieee.py 
 
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
