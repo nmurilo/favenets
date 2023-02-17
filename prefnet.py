@@ -28,7 +28,7 @@ def PacketHandler(pkt) :
                mac = "??" 
             print "%s(%s) [%s] "  %(pkt.addr2, mac, pkt.info)
 try:
-   # YOU MUST to put here your wifi interface in monitor mode 
+   # YOU MUST to put here your wifi interface already in monitor mode. 
    sniff(iface="mon0", prn = PacketHandler, lfilter=lambda p:Dot11ProbeReq in p)
 except:
    print "prefnet: Interface in monitor mode not found\n" 
