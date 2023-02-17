@@ -1,7 +1,7 @@
 #!/usr/bin/env python 
 __author__    = "Nelson Murilo" 
 __email__     = "nmurilo@gmail.com"
-_copyright__ = "Copyright (c) 2011-2020 Pangeia"  
+_copyright__ = "Copyright (c) 2011-2023 Pangeia Inc"  
 __license__   = "AMS"
 __version__   = "0.2"
 __date__      = "2012-05-20"
