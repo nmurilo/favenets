@@ -11,7 +11,7 @@ from ouilookup import OuiLookup
 import getopt,sys
 
 opt="ui:"
-interface="wlan0"
+interface="wlan0" # MUST TO BE IN MONITOR MODE ALREADY 
 probe_list = []
 
 try:
@@ -43,5 +43,4 @@ def PacketHandler(pkt):
             except:
                mac = "-"
             print(f"{addr}({mac}): {info}")
-
 sniff(iface=interface, prn=PacketHandler,monitor=True)
