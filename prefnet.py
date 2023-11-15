@@ -11,7 +11,7 @@ from ouilookup import OuiLookup
 import getopt,sys
 
 opt="ui:"
-interface="wlan0" # MUST TO BE IN MONITOR MODE ALREADY 
+interface="wlan0" # MUST BE IN MONITOR MODE ALREADY 
 probe_list = []
 
 try:
