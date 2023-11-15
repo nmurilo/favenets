@@ -33,7 +33,7 @@ for name, value in options:
 def PacketHandler(pkt):
 #   print(f"type={pkt.type}, subtype={pkt.subtype}") # DEBUG
    if pkt.type == 0 and pkt.subtype == 4:
-      info=pkt.info.decode('ascii')
+      info=pkt.info.decode('ascii','ígnore')
       addr=str(pkt.addr2)
       if info+addr not in probe_list:
          if info != "":
