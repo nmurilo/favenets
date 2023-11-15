@@ -17,7 +17,7 @@ probe_list = []
 try:
    options, args = getopt.getopt(sys.argv[1:], opt)
 except:
-   print ("Usage: favnet.py [-u]\n\t-u: Update OUI database\n\t-i interface")
+   print ("Usage: prefnet.py [-u]\n\t-u: Update OUI database\n\t-i interface")
    exit (1)
 
 for name, value in options:
@@ -27,7 +27,7 @@ for name, value in options:
    elif name == "-i":
       interface=value
    else:
-      print ("Usage: favnet.py [-u]\n\t-u: Update OUI database\n\t-i interface")
+      print ("Usage: prefnet.py [-u]\n\t-u: Update OUI database\n\t-i interface")
       exit (1)
 
 def PacketHandler(pkt):
