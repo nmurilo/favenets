@@ -22,7 +22,7 @@ except:
 
 for name, value in options:
    if name == "-u":
-      print("Updading oui database...\n")
+      print("Updating oui database...\n")
       OuiLookup().update()
    elif name == "-i":
       interface=value
