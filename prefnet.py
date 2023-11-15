@@ -37,7 +37,7 @@ def PacketHandler(pkt):
       addr=str(pkt.addr2)
       if info+addr not in probe_list:
          if info != "":
-                       probe_list.append(info+addr)
+               probe_list.append(info+addr)
             try:
                mac = str(OuiLookup().query(addr)).split("'")[3]
             except:
