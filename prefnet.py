@@ -43,4 +43,7 @@ def PacketHandler(pkt):
             except:
                mac = "-"
             print(f"{addr}({mac}): {info}")
-sniff(iface=interface, prn=PacketHandler,monitor=True)
+try:
+   sniff(iface=interface, prn=PacketHandler,monitor=True)
+except OSError as error:
+   print(f"prefnet: {error}")
