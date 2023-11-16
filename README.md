@@ -7,4 +7,6 @@ NOTICE: The interface MUST be in MONITOR state.
 
 Chop is a bash script for channel hopping according to the frequencies supported by the wifi interface. 
 It is useful to capture preferred network requests in all channels available. 
+Run it in parallel with 'prefnet' on other terminal window.
+
 
