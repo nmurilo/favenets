@@ -6,8 +6,8 @@
 
 # NOTICE: The interface MUST be in MONITOR mode. 
         
-'Chop' is a bash script for channel hopping according to the frequencies supported by the wifi interface. 
-It is useful to capture preferred network requests in all channels available. 
+'Chop' is a bash script for channel hopping according to the frequencies supported by the wifi interface.<br>
+It is useful to capture preferred network requests in all channels available.<br> 
 Run it in parallel with 'prefnet' on other terminal window.
 
 
