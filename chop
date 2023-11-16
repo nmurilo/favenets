@@ -1,0 +1,40 @@
+!/bin/bash
+# Nelson Murilo - 2023/11/15  - AMS (c)
+#
+usage() 
+{
+   echo -e "Usage: chop [-i interface] [-t time]"
+   exit 1
+}
+
+iface="wlan0" 
+tm="5s" 
+while getopts 'i:t:' c; do 
+   case $c in 
+      i) iface=${OPTARG} ;; 
+      t) tm=${OPTARG} ;;
+      *) usage ;; 
+   esac
+done
+
+if $(which iwconfig >/dev/null); then 
+   channels=$(iwlist wlan0 freq | egrep -v "available|Current" | tr -s " " | cut -d " " -f3) 
+else 
+   if $(which iw >/dev/null); then 
+      phynun=$(iw $iface info | grep wiphy | cut -d " " -f 2) 
+      channels=$(iw phy${phynun} info | grep MHz | egrep "\*" | cut -d \[ -f 2 | cut -d \] -f 1) 
+   fi
+fi
+[ -z "$channels" ] && { 
+   echo "chop: Neither 'iwconfig' nor 'iw' was found." 
+   exit 1
+} 
+
+while true; do 
+   for i in $channels; do 
+      iwconfig $iface channel ${i}
+      echo $i
+      sleep ${tm} 
+      clear
+   done
+done
