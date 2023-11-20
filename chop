@@ -18,7 +18,7 @@ while getopts 'i:t:' c; do
 done
 
 if $(which iwconfig >/dev/null); then 
-   channels=$(iwlist wlan0 freq | egrep -v "available|Current" | tr -s " " | cut -d " " -f3) 
+   channels=$(iwlist $iface freq | egrep -v "available|Current" | tr -s " " | cut -d " " -f3) 
 else 
    if $(which iw >/dev/null); then 
       phynun=$(iw $iface info | grep wiphy | cut -d " " -f 2) 
