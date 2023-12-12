@@ -1,5 +1,5 @@
 # FaveNets 
-'Prefnet' is a small program to catch devices searching for "favorite/preferred" wifi networks.<br>
+'Prefnet' is a small program to catch devices searching for "favourite/preferred" wifi networks.<br>
 <ul>
 <li>Use -i flag to change the interface if you need it.</li>
 </ul>
