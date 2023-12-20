@@ -1,6 +1,6 @@
 !/bin/bash
 # Nelson Murilo - 2023/11/15  - AMS (c)
-#
+# A channel rotation tool 
 usage() 
 {
    echo -e "Usage: chop [-i interface] [-t time]"
