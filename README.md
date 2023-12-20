@@ -1,5 +1,6 @@
 # FaveNets 
 'Prefnet' is a small program to catch devices searching for "favourite/preferred" wifi networks.<br>
+Options:
 <ul>
 <li>-i interface</li>
 <li>-u update (oui database)</li>
