@@ -9,6 +9,7 @@ usage()
 
 iface="wlan0" 
 tm="5s" 
+cmd="iwconfig"
 while getopts 'i:t:' c; do 
    case $c in 
       i) iface=${OPTARG} ;; 
@@ -16,25 +17,24 @@ while getopts 'i:t:' c; do
       *) usage ;; 
    esac
 done
-
 if $(which iwconfig >/dev/null); then 
    channels=$(iwlist $iface freq | egrep -v "available|Current" | tr -s " " | cut -d " " -f3) 
 else 
    if $(which iw >/dev/null); then 
       phynun=$(iw $iface info | grep wiphy | cut -d " " -f 2) 
       channels=$(iw phy${phynun} info | grep MHz | egrep "\*" | cut -d \[ -f 2 | cut -d \] -f 1) 
+      cmd="iw"
    fi
 fi
 [ -z "$channels" ] && { 
    echo "chop: Neither 'iwconfig' nor 'iw' was found." 
    exit 1
 } 
-
 while true; do 
    for i in $channels; do 
-      iwconfig $iface channel ${i}
+      [ "${cmd}" = "iwconfig" ] && iwconfig $iface channel $i || iw dev $iface set channel $i 
       echo $i
-      sleep ${tm} 
+      sleep $tm 
       clear
    done
 done
