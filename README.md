@@ -12,6 +12,10 @@ Options:
 It is useful to capture preferred network requests in all channels available.<br> 
 Run it in parallel with 'prefnet' on other terminal window.
 
+# Dependencies 
+SCAPY - pip install scapy 
+OUILOOKUP - pip install ouilookup 
+
 
 
 
